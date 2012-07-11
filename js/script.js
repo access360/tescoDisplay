@@ -11,6 +11,8 @@ var slideshow = new Dragdealer('slideshow',
 		  {
 		  	steps: totalSlides,
 		  	loose: true,
+		  	speed: 20,
+		loose:true,
 		  	callback: function() {
 		  		
 		  		
@@ -36,11 +38,15 @@ var slideshow = new Dragdealer('slideshow',
 		  		setTimeout('finalPage()',2000);
 		  		setTimeout('hideHand()',5000);
 		  		
-		  		
+		  		logAction('Page 5 Visited');
 		  		}
 		  	}
 		  });
+function logAction(action) {
+	
 
+		$.post("logger.php", { action: action } );
+}
 
 function finalPage() 
 {
@@ -60,7 +66,7 @@ function showHand() {
 	 $('#handPhone').animate({
 		    opacity: 1,
 		    bottom: '0',
-		  
+		    left:'840'
 		  }, 2000, function() {
 		    // Animation complete.
 			  
@@ -71,6 +77,7 @@ function hideHand() {
 	$('#handPhone').animate({
 	    opacity: 0,
 	    bottom: '-200',
+	    left:'880'
 	  
 	  }, 2000, function() {
 	    // Animation complete.
@@ -79,25 +86,15 @@ function hideHand() {
 }
 
 function showAlert() {
-	 $('#finishedShopping').animate({
-		    opacity: 1
-		  
-		  
-		  }, 500, function() {
-		    // Animation complete.
-			  
-		  });
+	 $('#finishedShopping').fadeIn('slow', function() {
+	        // Animation complete
+     });
 }
 
 function hideAlert() {
-	$('#finishedShopping').animate({
-	    opacity: 0
-	 
-	  
-	  }, 1000, function() {
-	    // Animation complete.
-		  
-	  });
+	 $('#finishedShopping').fadeOut('slow', function() {
+	        // Animation complete
+  });
 }
 
 
