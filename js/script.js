@@ -59,15 +59,16 @@ var slideshow = new Dragdealer('slideshow', {
                 showHand();
 
                 $('.phoneSlideshow').cycle({
-                    fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-							
+                    fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+			delay: 2500				
                 });
 				 
                 $('.phoneSlideshowSmall').cycle({
-                    fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+                    fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+delay:3000
 							
                 });
-                setTimeout('hideHand()', 17000);
+                setTimeout('hideHand()', 20000);
                 hand = 1;
             }
 
@@ -143,9 +144,9 @@ function hideHand() {
         // Animation complete.
         $('#handPhone').animate({
             opacity : 1,
-            bottom : '-950',
-            left : '590px',
-            width: '492px'
+            bottom : '-1000',
+            left : '690px',
+            width: '350px'
 
         }, 3000, function() {
             // Animation complete.
@@ -215,6 +216,20 @@ function reset() {
         location.reload();
     }
 }
+function checktime() {
+  d = new Date();
+    hour = parseInt(d.getHours());
+	
+    if(hour > 21 || hour < 6) {
+		
+        window.location  = 'slideshow.php';
+    } else {
+	
+	
+      //  hideHandtotal();
+      //  location.reload();
+    }
+}
 
 // Links
 
@@ -234,7 +249,7 @@ timeout:5000
         $(document).bind("idle.idleTimer", function(){
             var timeoutCorrect = (timeout/1000);
             logAction('No Activity for ' + timeoutCorrect + ' seconds');
-            reset();
+            checktime();
         });
 
         $(document).bind("active.idleTimer", function(){

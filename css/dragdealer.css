@@ -10,7 +10,8 @@ body {
 	padding: 0px;
 	margin: 0px;
 	cursor: none;
-	overflow: hidden;
+        overflow:hidden;
+	
 }
 
 #bgImage {
@@ -72,7 +73,7 @@ body {
 }
 #start {
     position:absolute;
-    top:1452px;
+    top:346px;
     left:239px;
     
 }
@@ -88,8 +89,8 @@ body {
 .phoneSlideshowSmall  {
 	z-index:2000;
 	position:relative;
-	left:278px;
-	top:50px;
+	left:195px;
+	top:24px;
 	width:238px;
 	
 }
@@ -99,8 +100,9 @@ body {
 	
 }
 .slideImagesSmall {
-	width: 149px;
-	height:256px;
+    
+	width: 110px;
+	height:189px;
 	
 }
 .yesno {
@@ -119,7 +121,7 @@ body {
     height: 97px;
     width:520px;
     left:280px;
-    top:1750px;
+    top:1720px;
     
 }
 #legal {
